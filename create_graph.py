@@ -6,12 +6,9 @@ def getKeysByValue(dictionary, search_value):
                 matching_keys.append(key)
     return matching_keys
 
-#my_dict = {'a': [2], 'b': [3,2], 'c': [3], 'd': [2,4,5]}
-#search_value = 2
-#found_keys = getKeysByValue(my_dict, search_value)
 
 
-def createGraph(fp):
+def create_graph(fp):
      file_path = fp
      dict = {}
 
@@ -39,4 +36,4 @@ def createGraph(fp):
      return dict
 
 
-print(createGraph("instances/male -50/queen5_5.txt"))
+#print(create_graph("instances/male -50/queen5_5.txt"))
