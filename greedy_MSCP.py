@@ -1,6 +1,7 @@
 from create_graph import *
+import time
 
-def greedy_mscp(g):
+def greedy(g):
      colors = {}   #mapiranje cvorova na boje = 'cvor': boja
      used_colors = set()
 
@@ -16,11 +17,15 @@ def greedy_mscp(g):
      
      return colors
 
-graph = create_graph("instances/male -50/queen5_5.txt")
+startTime = time.time()
+
+graph = create_graph("instances/male -50/queen7_7.txt")
 print("graf: ", graph)
 
-coloring = greedy_mscp(graph)
+coloring = greedy(graph)
 print("bojenje: ", coloring)
 
 min_sum = sum(coloring.values())   #tražena suma MSCP-a
 print("min suma: ", min_sum)
+
+print("vrijeme: ", time.time() - startTime)

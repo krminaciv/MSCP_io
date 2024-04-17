@@ -1,6 +1,8 @@
 from pulp import *
 from create_graph import *
+import time
 
+startTime = time.time()
 graph = create_graph("instances/male -50/queen5_5.txt")
 vertices = set(graph.keys())
 k = len(vertices) + 1
@@ -25,7 +27,7 @@ for v in vertices:
     problem += lpSum(x[v, c] for c in range(1,k)) == 1
 
 
-problem.solve()
+problem.solve(PULP_CBC_CMD(maxSeconds=600))
 
 
 mscp = 0
@@ -35,6 +37,6 @@ for v in vertices:
         if x[v, c].varValue == 1:
             print(f"Vertex {v} is colored with color {c}")
             mscp += c
-print(f"Total number of colors used: {int(pulp.value(problem.objective))}")
 print("MSCP =", mscp)
+print("vrijeme: ", time.time() - startTime)
 
