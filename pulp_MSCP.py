@@ -3,7 +3,7 @@ from create_graph import *
 import time
 
 startTime = time.time()
-graph = create_graph("instances/male -50/queen5_5.txt")
+graph = create_graph("instances/velike -200/queen13_13.txt")
 vertices = set(graph.keys())
 k = len(vertices) + 1
 

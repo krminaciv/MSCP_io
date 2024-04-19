@@ -19,7 +19,7 @@ def greedy(g):
 
 startTime = time.time()
 
-graph = create_graph("instances/male -50/queen7_7.txt")
+graph = create_graph("instances/velike -200/queen13_13.txt")
 print("graf: ", graph)
 
 coloring = greedy(graph)
